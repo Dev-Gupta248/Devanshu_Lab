@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management</title>
+    <link rel="icon " href="https://5.imimg.com/data5/SZ/ZP/HV/SELLER-55641410/school-management-software-500x500.png">
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        }
+        
+        .bar{
+            background-color: rgb(93, 87, 80);
+            height: 7vh;
+            display: flex;
+        }
+
+        .h1{
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+
+        .h1 a{
+            color: white;
+        }
+
+        .main{
+            display: flex;
+            width: 68vw;
+        }
+
+        .nav{
+            display: flex;
+        }
+
+        .li{
+            padding: 20px;
+            color: rgb(255, 255, 255);
+            font-size: 21px;
+            padding-left: 50px;
+            cursor: pointer;
+        }
+
+        .i1{
+            width: 450px;
+            border-radius: 15px;
+            height: 30vh;
+            border: 2px solid black;
+            margin-left: 20px;
+            
+        }
+        
+        li:hover{
+            color: rgb(209, 209, 214);
+        }
+
+        .I{
+            display: flex;
+            margin: 50px 0px 30px;
+            gap: 100px;
+        }
+
+        .vis{
+            display: flex;
+            padding: 20px;
+            gap: 100px;
+        }
+
+        h1 {
+        text-align: center;
+        color: #333;
+        }
+
+        header {
+        background: #eceeed;
+        color: rgb(243, 236, 236);
+        padding: 20px;
+        text-align: center;
+        }
+        header h1 {
+        margin: 0;
+        }
+
+        .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        gap: 40px;
+        }
+
+        .container img {
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+        max-width: 500px;
+        }
+
+        .about-text h2 {
+        margin-top: 0;
+        color: #4CAF50;
+        }
+
+        .about-text p {
+        line-height: 1.6;
+        }
+
+        footer {
+        text-align: center;
+        background: #333;
+        color: white;
+        padding: 15px;
+        margin-top: 50px;
+        bottom: 0;
+        position: absolute;
+        width: 100vw;
+        }
+        
+        .reviews {
+        background: white;
+        padding: 40px 20px;
+        margin: 40px auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 1000px;
+        }
+
+        .reviews h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #4CAF50;
+        }
+
+        .review-cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        width: 280px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card p {
+        font-style: italic;
+        margin-bottom: 15px;
+        }
+
+        .card h4 {
+        margin: 0;
+        text-align: right;
+        color: #333;
+        font-size: 14px;
+        }
+        
+    </style>
+</head>
+
+<body >
+
+        <nav class="bar">
+            <div class="main">
+                <img style="width: 66px;"  src="https://img.freepik.com/premium-vector/school-logo-white-background_917213-255798.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+                <h2 class="h1" ><a href="index.html" target="_blank">Adarsh Vidhya Mandir</a></h2>
+            </div>
+
+            <div class="nav">
+                <span class="li"><a href="student.html">Students</a></span>
+                <span class="li"><a href="faculty.html">Faculty Members</a></span>
+                <span class="li">Staff Members</span>
+            </div>
+ 
+        </nav>
+
+
+     <header>
+    <h1>📊 Welcome to Student Management System</h1>
+    </header>
+
+  <div class="container">
+     <div class="img">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Staples_High_School%2C_Westport%2C_CT.jpg" alt="Student Management Image">
+    </div>
+    
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Our Student Management System is designed to simplify the process of managing
+        student, faculty, and staff information. It provides a user-friendly interface
+        to handle academic records, attendance, and performance data efficiently.
+      </p>
+      <p>
+        Whether you are a student checking your progress, a faculty member managing courses,
+        or staff handling administrative tasks — this system ensures smooth and organized
+        operations for your institution.
+      </p>
+    </div>
+  </div>
+
+  <section class="reviews">
+    <h2>What People Say</h2>
+    <div class="review-cards">
+      <div class="card">
+        <p>"This system made managing student data so much easier! Highly recommended for any college."</p>
+        <h4>- Dr. Meena Rao, Faculty</h4>
+      </div>
+      <div class="card">
+        <p>"As a student, I love how simple it is to check my attendance and grades."</p>
+        <h4>- Rahul Verma, Student</h4>
+      </div>
+      <div class="card">
+        <p>"The admin panel is really helpful for managing staff and academic records smoothly."</p>
+        <h4>- Kavita Joshi, Staff</h4>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Student Management System | All Rights Reserved
+  </footer>
+
+
+</body>
+</html>

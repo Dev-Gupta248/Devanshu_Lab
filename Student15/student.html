@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management</title>
+    <link rel="icon " href="https://5.imimg.com/data5/SZ/ZP/HV/SELLER-55641410/school-management-software-500x500.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .bar{
+            background-color: rgb(93, 87, 80);
+            height: 7vh;
+            display: flex;
+        }
+
+        .h1 a{
+            color: white;
+        }
+        .h1{
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+        .main{
+            display: flex;
+            width: 68vw;
+        }
+
+        .nav{
+            display: flex;
+        }
+
+        .li{
+            padding: 20px;
+            color: rgb(255, 255, 255);
+            font-size: 21px;
+            padding-left: 50px;
+            cursor: pointer;
+        }
+
+
+        .i1{
+            width: 450px;
+            border-radius: 5px;
+            height: 30vh;
+        }
+        
+        li:hover{
+            color: rgb(61, 61, 216);
+        }
+
+        body{
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        }
+
+        h1 {
+        text-align: center;
+        color: #333;
+        }
+
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        }
+
+        th {
+        background: #4CAF50;
+        color: white;
+        }
+
+        .charts {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        width: 97vw;
+        height: 45vh;
+        }
+
+        canvas {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+        <nav class="bar">
+            <div class="main">
+                <img style="width: 66px;"  src="https://img.freepik.com/premium-vector/school-logo-white-background_917213-255798.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+                <h2 class="h1"><a href="index.html" target="_blank">Adarsh Vidhya Mandir</a></h2>
+            </div>
+
+            <div class="nav">
+                <span class="li"><a href="student.html">Students</a></span>
+                <span class="li"><a href="faculty.html">Faculty Members</a></span>
+                <span class="li">Staff Members</span>
+            </div>
+ 
+        </nav>
+
+    <h1>📊 Student Management Dashboard</h1>
+
+    <!-- Student Table -->
+    <table>
+        <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Year</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Attendance %</th>
+        <th>CGPA</th>
+        </tr>
+        <tr><td>ST001</td><td>Aditi Sharma</td><td>CSE</td><td>1st</td><td>F</td><td>18</td><td>92</td><td>8.5</td></tr>
+        <tr><td>ST002</td><td>Rahul Verma</td><td>ECE</td><td>2nd</td><td>M</td><td>19</td><td>85</td><td>7.9</td></tr>
+        <tr><td>ST003</td><td>Neha Singh</td><td>IT</td><td>3rd</td><td>F</td><td>20</td><td>95</td><td>9.1</td></tr>
+        <tr><td>ST004</td><td>Karan Patel</td><td>ME</td><td>4th</td><td>M</td><td>21</td><td>76</td><td>6.8</td></tr>
+        <tr><td>ST005</td><td>Priya Nair</td><td>CSE</td><td>2nd</td><td>F</td><td>19</td><td>88</td><td>8.2</td></tr>
+    </table>
+
+    <!-- Charts -->
+    <div class="charts">
+        <canvas id="deptChart" width="400" height="300"></canvas>
+        <canvas id="genderChart" width="400" height="300"></canvas>
+        <canvas id="cgpaChart" width="400" height="300"></canvas>
+    </div>
+
+    <script>
+        // Department Bar Chart
+        const ctx1 = document.getElementById('deptChart').getContext('2d');
+        new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['CSE', 'ECE', 'IT', 'ME'],
+            datasets: [{
+            label: 'Number of Students',
+            data: [2, 1, 1, 1], // count from table
+            backgroundColor: ['#4CAF50', '#2196F3', '#FF9800', '#9C27B0']
+            }]
+        },
+        options: { responsive: true }
+        });
+
+        // Gender Pie Chart
+        const ctx2 = document.getElementById('genderChart').getContext('2d');
+        new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['Male', 'Female'],
+            datasets: [{
+            label: 'Gender Distribution',
+            data: [2, 3], // M=2, F=3
+            backgroundColor: ['#2196F3', '#E91E63']
+            }]
+        }
+        });
+
+        // CGPA Line Chart
+        const ctx3 = document.getElementById('cgpaChart').getContext('2d');
+        new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['Aditi', 'Rahul', 'Neha', 'Karan', 'Priya'],
+            datasets: [{
+            label: 'CGPA',
+            data: [8.5, 7.9, 9.1, 6.8, 8.2],
+            borderColor: '#FF5722',
+            fill: false,
+            tension: 0.3
+            }]
+        }
+        });
+    </script>
+
+</body>
+</html>
